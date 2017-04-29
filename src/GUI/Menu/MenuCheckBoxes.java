@@ -9,11 +9,12 @@ import static GUI.Menu.MenuAnimations.*;
 import static GUI.Menu.MenuImages.microsoftHillsPattern;
 import static GUI.Menu.MenuImages.oceanSidePattern;
 import static GUI.Menu.MenuImages.rollingHillsPattern;
+import static GUI.Menu.MenuMusic.menuMusicPlayer;
 import static GUI.Menu.MenuRectangles.menuSceneInnerBorder;
 
 public class MenuCheckBoxes {
 
-    public static CheckBox rollingHills, microsoftHills, oceanSide;
+    public static CheckBox rollingHills, microsoftHills, oceanSide, musicOffCheck, musicOnCheck;
 
     public static void createMenuCheckBoxes(){
         initializeMenuCheckBoxes();
@@ -24,10 +25,15 @@ public class MenuCheckBoxes {
         configureSingleCheckBox(rollingHills, -382, 350, "Rolling Hills");
         configureSingleCheckBox(oceanSide, -386, 395, "Oceanside");
         configureSingleCheckBox(microsoftHills, -375, 410, "Microsoft Hills");
+        configureSingleCheckBox(musicOffCheck, 20, -50, "It's too loud!");
+        configureSingleCheckBox(musicOnCheck, 200, -50, "Gimme some sound!");
 
         oceanSide.setOnMouseClicked(event -> configureGameBackground(event));
         rollingHills.setOnMouseClicked(event -> configureGameBackground(event));
         microsoftHills.setOnMouseClicked(event -> configureGameBackground(event));
+
+        musicOnCheck.setOnMouseClicked(event ->  menuMusicPlayer.play());
+        musicOffCheck.setOnMouseClicked(event -> menuMusicPlayer.stop());
     }
 
     private static void configureGameBackground(MouseEvent event) {
@@ -48,6 +54,8 @@ public class MenuCheckBoxes {
         rollingHills = new CheckBox();
         microsoftHills = new CheckBox();
         oceanSide = new CheckBox();
+        musicOffCheck = new CheckBox();
+        musicOnCheck = new CheckBox();
     }
 
     private static void configureSingleCheckBox(CheckBox checkBox, double xPos, double yPos, String text){

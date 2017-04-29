@@ -32,6 +32,13 @@ public class MenuButtons {
 
     private static void configureSetOnActions() {
         beginGame.setOnMouseClicked(event -> bringUpMusic());
+        instructions.setOnMouseClicked(event -> dropDownMusic());
+    }
+
+    private static void dropDownMusic() {
+        musicOffPath.play();
+        musicOnPath.play();
+        System.out.println("This works");
     }
 
     private static void bringUpMusic() {

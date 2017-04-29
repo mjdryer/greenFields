@@ -16,4 +16,13 @@ public class MenuImages {
     public static Image oceanSideImage = new Image("file:oceanSide.jpeg");
     public static ImagePattern oceanSidePattern = new ImagePattern(oceanSideImage);
 
+    public static Image bannerImage = new Image("file:greenFieldsBanner.jpg");
+    public static ImageView bannerPattern = new ImageView(bannerImage);
+
+    public static void configureImages(){
+
+        bannerPattern.setLayoutX(100);
+        bannerPattern.setLayoutY(100);
+
+    }
 }

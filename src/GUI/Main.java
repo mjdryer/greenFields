@@ -7,6 +7,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import static GUI.Menu.MenuAnimations.configureMenuAnimations;
+import static GUI.Menu.MenuImages.configureImages;
 import static GUI.Menu.MenuMusic.playMenuMusic;
 import static GUI.PanesScenes.*;
 
@@ -28,7 +29,7 @@ public class Main extends Application {
         configurePanes();
         configureScenes();
         configureMenuAnimations();
-
+        configureImages();
     }
 
 }

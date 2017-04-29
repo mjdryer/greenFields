@@ -15,6 +15,7 @@ import static GUI.Menu.MenuGraphicContext.configureGraphicContext;
 
 import static GUI.Menu.MenuGraphicContext.menuCanvasMain;
 import static GUI.Menu.MenuGraphicContext.menuCanvasSide;
+import static GUI.Menu.MenuImages.bannerPattern;
 import static GUI.Menu.MenuRectangles.*;
 
 public class PanesScenes {
@@ -40,7 +41,7 @@ public class PanesScenes {
     private static void addChildrenToPanes() {
 
         menuPane.getChildren().addAll(menuSceneInnerBorder, menuSceneOuterBorder, menuCanvasMain, menuCanvasSide,
-                beginGame, instructions, rollingHills, oceanSide, microsoftHills);
+                beginGame, instructions, rollingHills, oceanSide, microsoftHills, musicOffCheck, musicOnCheck, bannerPattern);
         gamePane.getChildren().addAll(gameSceneInnerBorder, gameSceneOuterBorder);
 
     }

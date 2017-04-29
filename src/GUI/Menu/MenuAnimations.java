@@ -7,19 +7,17 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
 import javafx.util.Duration;
 
-import static GUI.Menu.MenuCheckBoxes.microsoftHills;
-import static GUI.Menu.MenuCheckBoxes.oceanSide;
-import static GUI.Menu.MenuCheckBoxes.rollingHills;
+import static GUI.Menu.MenuCheckBoxes.*;
 import static GUI.Menu.MenuGraphicContext.menuCanvasMain;
 
 
 public class MenuAnimations {
 
     public static PathTransition menuTitleBounce, menuTitleLeave, checkboxOneEnter, checkboxOneLeave, checkboxTwoEnter, checkboxTwoLeave,
-    checkboxThreeEnter, checkboxThreeLeave;
+    checkboxThreeEnter, checkboxThreeLeave, musicOnPath, musicOffPath;
 
     public static Line titleBounceLine, titleLeaveLine, checkboxOneEnterLine, checkboxOneLeaveLine, checkboxTwoEnterLine, checkboxTwoLeaveLine,
-    checkboxThreeEnterLine, checkboxThreeLeaveLine;
+    checkboxThreeEnterLine, checkboxThreeLeaveLine, musicOnLine, musicOffLine;
 
 
     public static void configureMenuAnimations(){
@@ -39,6 +37,11 @@ public class MenuAnimations {
         checkboxTwoLeave = new PathTransition();
         checkboxThreeEnter = new PathTransition();
         checkboxThreeLeave = new PathTransition();
+        musicOnPath = new PathTransition();
+        musicOffPath = new PathTransition();
+
+        configureSinglePathTransition(musicOnPath, 1, .5, musicOnCheck, musicOnLine, false);
+        configureSinglePathTransition(musicOffPath, 1, .5, musicOffCheck, musicOffLine, false);
 
         configureSinglePathTransition(checkboxOneEnter, 1, 2.5, oceanSide, checkboxOneEnterLine, false);
         configureSinglePathTransition(checkboxOneLeave, 1, 2, oceanSide, checkboxOneLeaveLine, false);
@@ -66,6 +69,8 @@ public class MenuAnimations {
         checkboxTwoLeaveLine = new Line();
         checkboxThreeEnterLine = new Line();
         checkboxThreeLeaveLine = new Line();
+        musicOnLine = new Line();
+        musicOffLine = new Line();
 
         configureSingleLine(titleBounceLine, 300, 300, 260, 270);
         configureSingleLine(titleLeaveLine, 300, 300, 265, -1000);
@@ -77,6 +82,9 @@ public class MenuAnimations {
         configureSingleLine(checkboxOneLeaveLine, 480, 1140, 120, 120);
         configureSingleLine(checkboxTwoLeaveLine, 480, 1140, 130, 130);
         configureSingleLine(checkboxThreeLeaveLine, 480, 1140, 140, 140);
+
+        configureSingleLine(musicOnLine, 50, 50, -20, 100);
+        configureSingleLine(musicOffLine, 100, 100, -20, 100);
     }
 
     private static void setDelays() {

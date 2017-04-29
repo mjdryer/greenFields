@@ -6,7 +6,7 @@ import javafx.scene.media.MediaPlayer;
 
 public class MenuMusic {
 
-    private static MediaPlayer menuMusicPlayer;
+    public static MediaPlayer menuMusicPlayer;
 
     public static void playMenuMusic(){
 
