@@ -20,7 +20,7 @@ public class Main extends Application {
         configureEverything();
         greenFields.setScene(menuScene);
         greenFields.show();
-        playMenuMusic();
+        //playMenuMusic();
     }
 
     public static void configureEverything() {

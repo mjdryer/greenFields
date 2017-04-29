@@ -10,6 +10,7 @@ import static GUI.Game.GameRectangles.gameSceneOuterBorder;
 import static GUI.Menu.MenuButtons.beginGame;
 import static GUI.Menu.MenuButtons.createMenuButtons;
 import static GUI.Menu.MenuButtons.instructions;
+import static GUI.Menu.MenuCheckBoxes.*;
 import static GUI.Menu.MenuGraphicContext.configureGraphicContext;
 
 import static GUI.Menu.MenuGraphicContext.menuCanvasMain;
@@ -26,6 +27,7 @@ public class PanesScenes {
 
     public static void configurePanes() {
 
+        createMenuCheckBoxes();
         initializePanes();
         configureAllMenuRectangles();
         configureAllGameRectangles();
@@ -37,7 +39,8 @@ public class PanesScenes {
 
     private static void addChildrenToPanes() {
 
-        menuPane.getChildren().addAll(menuSceneInnerBorder, menuSceneOuterBorder, menuCanvasMain, menuCanvasSide, beginGame, instructions);
+        menuPane.getChildren().addAll(menuSceneInnerBorder, menuSceneOuterBorder, menuCanvasMain, menuCanvasSide,
+                beginGame, instructions, rollingHills, oceanSide, microsoftHills);
         gamePane.getChildren().addAll(gameSceneInnerBorder, gameSceneOuterBorder);
 
     }

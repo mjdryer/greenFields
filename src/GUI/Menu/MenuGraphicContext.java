@@ -24,7 +24,7 @@ public class MenuGraphicContext {
 
     private static void configureMenuGraphicContext() {
         configureSingleGraphicContext(menuTitle, Paint.valueOf("white"), Paint.valueOf("black"), 2, titleFont, "GRASSY FIELDS", 260, 300);
-        configureSingleGraphicContext(menuSubtitle, Paint.valueOf("white"), Paint.valueOf("black"), .5, subtitleFont, "a casual game", 440, 320);
+        configureSingleGraphicContext(menuSubtitle, Paint.valueOf("white"), Paint.valueOf("black"), .5, subtitleFont, "a game for you", 440, 320);
         configureSingleGraphicContext(beginGame, Paint.valueOf("white"), Paint.valueOf("black"), .5, beginFont, "Play", 490, 500);
         configureSingleGraphicContext(instructions, Paint.valueOf("white"), Paint.valueOf("black"), .5, beginFont, "Settings", 430, 550);
     }

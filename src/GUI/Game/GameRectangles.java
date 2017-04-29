@@ -3,7 +3,8 @@ package GUI.Game;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
-import static GUI.Menu.MenuImages.menuSceneBackgroundGIF;
+
+import static GUI.Menu.MenuImages.oceanSidePattern;
 import static GUI.Menu.MenuRectangles.configureSingleRectangle;
 
 /**
@@ -31,7 +32,7 @@ public class GameRectangles {
     public static void configureGameSeneRectangles(){
 
         configureSingleRectangle(gameSceneOuterBorder, 5, 10, 10, Paint.valueOf("Black"), null);
-        configureSingleRectangle(gameSceneInnerBorder, 2, 5, 5, Paint.valueOf("Black"), menuSceneBackgroundGIF);
+        configureSingleRectangle(gameSceneInnerBorder, 2, 5, 5, Paint.valueOf("Black"), oceanSidePattern);
     }
 
 }

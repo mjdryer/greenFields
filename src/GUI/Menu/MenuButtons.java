@@ -1,8 +1,8 @@
 package GUI.Menu;
 
 import javafx.scene.control.Button;
-import static GUI.Menu.MenuAnimations.menuLeavePath;
-import static GUI.Menu.MenuAnimations.menuStayPath;
+
+import static GUI.Menu.MenuAnimations.*;
 import static GUI.Menu.MenuGraphicContext.menuCanvasSide;
 
 public class MenuButtons {
@@ -35,9 +35,12 @@ public class MenuButtons {
     }
 
     private static void bringUpMusic() {
-        menuLeavePath.play();
-        menuStayPath.stop();
+        menuTitleLeave.play();
+        menuTitleBounce.stop();
         menuCanvasSide.setVisible(false);
+        checkboxOneEnter.play();
+        checkboxTwoEnter.play();
+        checkboxThreeEnter.play();
     }
 
 

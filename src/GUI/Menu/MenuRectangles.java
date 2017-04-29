@@ -2,8 +2,10 @@ package GUI.Menu;
 
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
-import static GUI.Menu.MenuImages.menuSceneBackgroundGIF;
 
+import static GUI.Menu.MenuImages.microsoftHillsPattern;
+import static GUI.Menu.MenuImages.oceanSidePattern;
+import static GUI.Menu.MenuImages.rollingHillsPattern;
 
 
 public class MenuRectangles {
@@ -28,7 +30,7 @@ public class MenuRectangles {
     public static void configureMenuSeneRectangles(){
 
         configureSingleRectangle(menuSceneOuterBorder, 5, 10, 10, Paint.valueOf("Black"), null);
-        configureSingleRectangle(menuSceneInnerBorder, 2, 5, 5, Paint.valueOf("Black"), menuSceneBackgroundGIF);
+        configureSingleRectangle(menuSceneInnerBorder, 2, 5, 5, Paint.valueOf("Black"), rollingHillsPattern);
     }
 
     public static void configureSingleRectangle(Rectangle rectangle, double strokeWidth, double arcWidth, double arcHeight, Paint strokeColor, Paint fillColor){
