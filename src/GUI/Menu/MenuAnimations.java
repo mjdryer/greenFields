@@ -9,15 +9,16 @@ import javafx.util.Duration;
 
 import static GUI.Menu.MenuCheckBoxes.*;
 import static GUI.Menu.MenuGraphicContext.menuCanvasMain;
+import static GUI.Menu.MenuImages.bannerPattern;
 
 
 public class MenuAnimations {
 
     public static PathTransition menuTitleBounce, menuTitleLeave, checkboxOneEnter, checkboxOneLeave, checkboxTwoEnter, checkboxTwoLeave,
-    checkboxThreeEnter, checkboxThreeLeave, musicOnPath, musicOffPath;
+    checkboxThreeEnter, checkboxThreeLeave, musicOnPath, musicOffPath, musicOnUp, musicOffUp, bannerDown, bannerUp;
 
     public static Line titleBounceLine, titleLeaveLine, checkboxOneEnterLine, checkboxOneLeaveLine, checkboxTwoEnterLine, checkboxTwoLeaveLine,
-    checkboxThreeEnterLine, checkboxThreeLeaveLine, musicOnLine, musicOffLine;
+    checkboxThreeEnterLine, checkboxThreeLeaveLine, musicOnLine, musicOffLine, bannerDownLine, bannerUpLine, musicOnUpLine, musicOffUpLine;
 
 
     public static void configureMenuAnimations(){
@@ -39,6 +40,10 @@ public class MenuAnimations {
         checkboxThreeLeave = new PathTransition();
         musicOnPath = new PathTransition();
         musicOffPath = new PathTransition();
+        musicOnUp = new PathTransition();
+        musicOffUp = new PathTransition();
+        bannerUp = new PathTransition();
+        bannerDown = new PathTransition();
 
         configureSinglePathTransition(musicOnPath, 1, .5, musicOnCheck, musicOnLine, false);
         configureSinglePathTransition(musicOffPath, 1, .5, musicOffCheck, musicOffLine, false);
@@ -54,6 +59,12 @@ public class MenuAnimations {
 
         configureSinglePathTransition(menuTitleLeave, 1, 3, menuCanvasMain, titleLeaveLine, false);
         configureSinglePathTransition(menuTitleBounce, Animation.INDEFINITE, 2, menuCanvasMain, titleBounceLine, true);
+
+        configureSinglePathTransition(bannerDown, 1, .5, bannerPattern, bannerDownLine, false);
+        configureSinglePathTransition(bannerUp, 1, .5, bannerPattern, bannerUpLine, false);
+
+        configureSinglePathTransition(musicOnUp, 1, .5, musicOnCheck, musicOnUpLine, false);
+        configureSinglePathTransition(musicOffUp, 1, .5, musicOffCheck, musicOffUpLine, false);
 
         menuTitleBounce.play();
     }
@@ -72,6 +83,11 @@ public class MenuAnimations {
         musicOnLine = new Line();
         musicOffLine = new Line();
 
+        bannerDownLine = new Line();
+        bannerUpLine = new Line();
+        musicOnUpLine = new Line();
+        musicOffUpLine = new Line();
+
         configureSingleLine(titleBounceLine, 300, 300, 260, 270);
         configureSingleLine(titleLeaveLine, 300, 300, 265, -1000);
 
@@ -83,8 +99,14 @@ public class MenuAnimations {
         configureSingleLine(checkboxTwoLeaveLine, 480, 1140, 130, 130);
         configureSingleLine(checkboxThreeLeaveLine, 480, 1140, 140, 140);
 
-        configureSingleLine(musicOnLine, 50, 50, -20, 100);
-        configureSingleLine(musicOffLine, 100, 100, -20, 100);
+        configureSingleLine(musicOnLine, -80, -80, -20, 70);
+        configureSingleLine(musicOffLine, 79, 79, -20, 100);
+
+        configureSingleLine(musicOnUpLine, -80, -80, 70, -20);
+        configureSingleLine(musicOffUpLine, 79, 79, 100, -20);
+
+        configureSingleLine(bannerDownLine, 150, 150, -20, 150);
+        configureSingleLine(bannerUpLine, 150, 150, 150, -20);
     }
 
     private static void setDelays() {

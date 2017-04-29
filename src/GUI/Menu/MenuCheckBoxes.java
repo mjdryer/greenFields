@@ -32,8 +32,14 @@ public class MenuCheckBoxes {
         rollingHills.setOnMouseClicked(event -> configureGameBackground(event));
         microsoftHills.setOnMouseClicked(event -> configureGameBackground(event));
 
-        musicOnCheck.setOnMouseClicked(event ->  menuMusicPlayer.play());
-        musicOffCheck.setOnMouseClicked(event -> menuMusicPlayer.stop());
+        musicOnCheck.setOnMouseClicked(event ->  moveUpSettings());
+        musicOffCheck.setOnMouseClicked(event -> moveUpSettings());
+    }
+
+    private static void moveUpSettings() {
+        bannerUp.play();
+        musicOnUp.play();
+        musicOffUp.play();
     }
 
     private static void configureGameBackground(MouseEvent event) {

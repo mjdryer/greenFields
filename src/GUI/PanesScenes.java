@@ -41,7 +41,7 @@ public class PanesScenes {
     private static void addChildrenToPanes() {
 
         menuPane.getChildren().addAll(menuSceneInnerBorder, menuSceneOuterBorder, menuCanvasMain, menuCanvasSide,
-                beginGame, instructions, rollingHills, oceanSide, microsoftHills, musicOffCheck, musicOnCheck, bannerPattern);
+                beginGame, instructions, rollingHills, oceanSide, microsoftHills, bannerPattern, musicOffCheck, musicOnCheck);
         gamePane.getChildren().addAll(gameSceneInnerBorder, gameSceneOuterBorder);
 
     }

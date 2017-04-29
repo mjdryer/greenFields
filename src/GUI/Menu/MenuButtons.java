@@ -38,6 +38,7 @@ public class MenuButtons {
     private static void dropDownMusic() {
         musicOffPath.play();
         musicOnPath.play();
+        bannerDown.play();
         System.out.println("This works");
     }
 
