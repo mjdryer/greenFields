@@ -10,7 +10,7 @@ public class MenuMusic {
 
     public static void playMenuMusic(){
 
-        Media menuMedia = new Media(MenuMusic.class.getResource("C:/Users/Max Dryer/IdeaProjects/greenFields/GoskuMarshes.mp3").toExternalForm());
+        Media menuMedia = new Media(MenuMusic.class.getResource("GoksuMarshes.mp3").toExternalForm());
         menuMusicPlayer = new MediaPlayer(menuMedia);
         menuMusicPlayer.play();
     }
