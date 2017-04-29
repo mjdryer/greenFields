@@ -22,9 +22,9 @@ public class MenuCheckBoxes {
     }
 
     private static void configureMenuCheckBoxes() {
-        configureSingleCheckBox(rollingHills, -382, 350, "Rolling Hills");
-        configureSingleCheckBox(oceanSide, -386, 395, "Oceanside");
-        configureSingleCheckBox(microsoftHills, -375, 410, "Microsoft Hills");
+        configureSingleCheckBox(rollingHills, -382, 350, "Green Escape");
+        configureSingleCheckBox(oceanSide, -390, 395, "Oceanside");
+        configureSingleCheckBox(microsoftHills, -386, 410, "Rolling Hills");
         configureSingleCheckBox(musicOffCheck, 20, -50, "It's too loud!");
         configureSingleCheckBox(musicOnCheck, 200, -50, "Gimme some sound!");
 
