@@ -19,10 +19,15 @@ public class MenuImages {
     public static Image bannerImage = new Image("file:greenFieldsBanner.gif");
     public static ImageView bannerPattern = new ImageView(bannerImage);
 
+    public static Image bigBannerImage = new Image("file:bigBanner.gif");
+    public static ImageView bigBannerPattern = new ImageView(bigBannerImage);
+
     public static void configureImages(){
 
         bannerPattern.setLayoutX(20);
         bannerPattern.setLayoutY(-110);
 
+        bigBannerPattern.setLayoutX(50);
+        bigBannerPattern.setLayoutY(-200);
     }
 }
