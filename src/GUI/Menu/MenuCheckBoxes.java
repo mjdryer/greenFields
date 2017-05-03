@@ -1,7 +1,5 @@
 package GUI.Menu;
 
-
-import GUI.Main;
 import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 
@@ -9,13 +7,11 @@ import static GUI.Menu.MenuAnimations.*;
 import static GUI.Menu.MenuImages.microsoftHillsPattern;
 import static GUI.Menu.MenuImages.oceanSidePattern;
 import static GUI.Menu.MenuImages.rollingHillsPattern;
-import static GUI.Menu.MenuMusic.menuMusicPlayer;
 import static GUI.Menu.MenuRectangles.menuSceneInnerBorder;
 
 public class MenuCheckBoxes {
 
-    public static CheckBox rollingHills, microsoftHills, oceanSide, musicOffCheck, musicOnCheck,
-            smallWideOne, tallThinOne, squareOne, brickOne;
+    public static CheckBox rollingHills, microsoftHills, oceanSide, musicOffCheck, musicOnCheck;
 
     public static void createMenuCheckBoxes(){
         initializeMenuCheckBoxes();
@@ -23,21 +19,25 @@ public class MenuCheckBoxes {
     }
 
     private static void configureMenuCheckBoxes() {
+        configureOtherCheckBoxes();
+        configureSetOnMouseClicked();
+    }
+
+    private static void configureOtherCheckBoxes() {
         configureSingleCheckBox(rollingHills, -382, 350, "Green Escape");
         configureSingleCheckBox(oceanSide, -390, 395, "Oceanside");
         configureSingleCheckBox(microsoftHills, -386, 410, "Rolling Hills");
-        configureSingleCheckBox(musicOffCheck, 20, -50, "No, I like it quiet!");
+        configureSingleCheckBox(musicOffCheck, 32, -50, "No, I like it quiet!");
         configureSingleCheckBox(musicOnCheck, 200, -50, "Gimme some sound!");
-        configureSingleCheckBox(tallThinOne, 100, -50, "A tall, thin one.");
-        configureSingleCheckBox(smallWideOne, 100, -70, "A small, wide one.");
-        configureSingleCheckBox(squareOne, 300, -50, "A square lookin' one.");
-        configureSingleCheckBox(brickOne, 300, -30, "Just gimme a brick.");
+    }
 
+
+
+    private static void configureSetOnMouseClicked() {
         oceanSide.setOnMouseClicked(event -> configureGameBackground(event));
         rollingHills.setOnMouseClicked(event -> configureGameBackground(event));
         microsoftHills.setOnMouseClicked(event -> configureGameBackground(event));
-
-        musicOnCheck.setOnMouseClicked(event ->  moveUpSettings());
+        musicOnCheck.setOnMouseClicked(event -> moveUpSettings());
         musicOffCheck.setOnMouseClicked(event -> moveUpSettings());
     }
 
@@ -56,14 +56,20 @@ public class MenuCheckBoxes {
         else if (event.getSource()==microsoftHills)
             menuSceneInnerBorder.setFill(microsoftHillsPattern);
 
+        playPathsAfterBackgroundIsChosen();
+
+    }
+
+    private static void playPathsAfterBackgroundIsChosen() {
         checkboxOneLeave.play();
         checkboxTwoLeave.play();
         checkboxThreeLeave.play();
         bigBannerPath.play();
-        smallWideDownPath.play();
+
         tallThinDownPath.play();
-        brickDownPath.play();
+        smallWideDownPath.play();
         squareDownPath.play();
+        brickDownPath.play();
     }
 
     private static void initializeMenuCheckBoxes() {
@@ -72,10 +78,6 @@ public class MenuCheckBoxes {
         oceanSide = new CheckBox();
         musicOffCheck = new CheckBox();
         musicOnCheck = new CheckBox();
-        smallWideOne = new CheckBox();
-        tallThinOne = new CheckBox();
-        squareOne = new CheckBox();
-        brickOne = new CheckBox();
     }
 
     private static void configureSingleCheckBox(CheckBox checkBox, double xPos, double yPos, String text){

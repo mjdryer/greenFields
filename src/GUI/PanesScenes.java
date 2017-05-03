@@ -4,14 +4,13 @@ package GUI;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
+import static GUI.Menu.MenuButtons.*;
 import static GUI.Menu.MenuButtons.beginGame;
-import static GUI.Menu.MenuButtons.createMenuButtons;
+import static GUI.Menu.MenuButtons.brickOneButton;
 import static GUI.Menu.MenuButtons.instructions;
 import static GUI.Menu.MenuCheckBoxes.*;
-import static GUI.Menu.MenuGraphicContext.configureGraphicContext;
 
-import static GUI.Menu.MenuGraphicContext.menuCanvasMain;
-import static GUI.Menu.MenuGraphicContext.menuCanvasSide;
+import static GUI.Menu.MenuGraphicContext.*;
 import static GUI.Menu.MenuImages.bannerPattern;
 import static GUI.Menu.MenuImages.bigBannerPattern;
 import static GUI.Menu.MenuRectangles.*;
@@ -37,9 +36,12 @@ public class PanesScenes {
 
     private static void addChildrenToPanes() {
 
-        menuPane.getChildren().addAll(menuSceneInnerBorder, menuSceneOuterBorder, menuCanvasMain, menuCanvasSide,
-                beginGame, instructions, rollingHills, oceanSide, microsoftHills, bannerPattern, musicOffCheck, musicOnCheck,
-                rectangles, bigBannerPattern, tallThinOne, smallWideOne, squareOne, brickOne);
+        menuPane.getChildren().addAll(menuSceneInnerBorder, menuSceneOuterBorder, bigBannerPattern,
+                tallThinOneButton, smallWideOneButton, squareOneButton, brickOneButton,
+                menuCanvasMain, menuCanvasSide, bannerPattern,
+                beginGame, instructions, rollingHills, oceanSide, microsoftHills,
+                musicOffCheck, musicOnCheck, tallThinGroup, shortWideGroup,
+                squareGroup, brickOne, brickTwo, brickThree, tallThinOne, tallThinTwo, tallThinThree);
 
 
     }
