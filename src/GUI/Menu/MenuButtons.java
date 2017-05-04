@@ -9,14 +9,20 @@ import static GUI.Menu.MenuGraphicContext.subtitleFont;
 public class MenuButtons {
 
     public static Button beginGame, instructions, tallThinOneButton, smallWideOneButton, brickOneButton, squareOneButton;
-    public static int brickCounter, tallThinCounter;
+    public static int brickCounter, tallThinCounter, shortWideCounter, squareCounter;
 
     public static void createMenuButtons(){
-        brickCounter = 0;
-        tallThinCounter = 0;
+        initializeCounters();
         initializeMenuButtons();
         configureMenuButtons();
         configureSetOnActions();
+    }
+
+    private static void initializeCounters() {
+        brickCounter = 0;
+        tallThinCounter = 0;
+        shortWideCounter = 0;
+        squareCounter = 0;
     }
 
     private static void configureMenuButtons() {
@@ -50,9 +56,31 @@ public class MenuButtons {
         beginGame.setOnMouseClicked(event -> bringUpMusic());
         instructions.setOnMouseClicked(event -> dropDownMusic());
         tallThinOneButton.setOnAction(event ->  giveTallThinRectangleToPlayer());
-        smallWideOneButton.setOnAction(event ->  shortWideGroupPath.play());
+        smallWideOneButton.setOnAction(event ->  giveShortWideRectangleToPlayer());
         brickOneButton.setOnAction(event ->  giveBrickRectangleToPlayer());
-        squareOneButton.setOnAction(event ->  squareGroupPath.play());
+        squareOneButton.setOnAction(event ->  giveSquareRectangleToPlayer());
+    }
+
+    private static void giveSquareRectangleToPlayer() {
+        if (squareCounter == 0)
+            squareOnePath.play();
+        if (squareCounter == 1)
+            squareTwoPath.play();
+        if (squareCounter == 2)
+            squareThreePath.play();
+
+        squareCounter++;
+    }
+
+    private static void giveShortWideRectangleToPlayer() {
+        if (shortWideCounter == 0)
+            shortWideOnePath.play();
+        if (shortWideCounter == 1)
+            shortWideTwoPath.play();
+        if (shortWideCounter == 2)
+            shortWideThreePath.play();
+
+        shortWideCounter++;
     }
 
     private static void giveTallThinRectangleToPlayer() {

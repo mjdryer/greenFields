@@ -64,48 +64,60 @@ public class MenuRectangles {
 
         brickOne.setOnMousePressed(rectangleOnMouseDragged);
         brickOne.setOnMouseDragged(rectangleOnMousePressed);
+        brickOne.setOnMouseClicked(event -> setGravity(brickOne));
 
         brickTwo.setOnMousePressed(rectangleOnMouseDragged);
         brickTwo.setOnMouseDragged(rectangleOnMousePressed);
+        brickTwo.setOnMouseClicked(event -> setGravity(brickTwo));
 
         brickThree.setOnMousePressed(rectangleOnMouseDragged);
         brickThree.setOnMouseDragged(rectangleOnMousePressed);
+        brickThree.setOnMouseClicked(event -> setGravity(brickThree));
     }
 
     private static void shortWideSetOnDrop() {
 
         shortWideOne.setOnMousePressed(rectangleOnMouseDragged);
         shortWideOne.setOnMouseDragged(rectangleOnMousePressed);
+        shortWideOne.setOnMouseClicked(event -> setGravity(shortWideOne));
 
         shortWideTwo.setOnMousePressed(rectangleOnMouseDragged);
         shortWideTwo.setOnMouseDragged(rectangleOnMousePressed);
+        shortWideTwo.setOnMouseClicked(event -> setGravity(shortWideTwo));
 
         shortWideThree.setOnMousePressed(rectangleOnMouseDragged);
         shortWideThree.setOnMouseDragged(rectangleOnMousePressed);
+        shortWideThree.setOnMouseClicked(event -> setGravity(shortWideThree));
     }
 
     private static void tallThinSetOnDrop() {
 
         tallThinOne.setOnMousePressed(rectangleOnMouseDragged);
         tallThinOne.setOnMouseDragged(rectangleOnMousePressed);
+        tallThinOne.setOnMouseClicked(event -> setGravity(tallThinOne));
 
         tallThinTwo.setOnMousePressed(rectangleOnMouseDragged);
         tallThinTwo.setOnMouseDragged(rectangleOnMousePressed);
+        tallThinTwo.setOnMouseClicked(event -> setGravity(tallThinTwo));
 
         tallThinThree.setOnMousePressed(rectangleOnMouseDragged);
         tallThinThree.setOnMouseDragged(rectangleOnMousePressed);
+        tallThinThree.setOnMouseClicked(event -> setGravity(tallThinThree));
     }
 
     private static void squareSetOnDrop() {
 
         dragAndDrop.setOnMousePressed(rectangleOnMouseDragged);
         dragAndDrop.setOnMouseDragged(rectangleOnMousePressed);
+        dragAndDrop.setOnMouseClicked(event -> setGravity(dragAndDrop));
 
         dragAndDropTwo.setOnMousePressed(rectangleOnMouseDragged);
         dragAndDropTwo.setOnMouseDragged(rectangleOnMousePressed);
+        dragAndDropTwo.setOnMouseClicked(event -> setGravity(dragAndDropTwo));
 
         dragAndDropThree.setOnMousePressed(rectangleOnMouseDragged);
         dragAndDropThree.setOnMouseDragged(rectangleOnMousePressed);
+        dragAndDropThree.setOnMouseClicked(event -> setGravity(dragAndDropThree));
     }
 
     private static void setGravity(Rectangle rectangle) {
@@ -165,15 +177,15 @@ public class MenuRectangles {
     }
 
     private static void initializeSquare() {
-        dragAndDrop = new Rectangle(50, 100, 50, 50);
-        dragAndDropTwo = new Rectangle(50, 150, 50, 50);
-        dragAndDropThree = new Rectangle(50, 200, 50, 50);
+        dragAndDrop = new Rectangle(50, -100, 50, 50);
+        dragAndDropTwo = new Rectangle(50, -150, 50, 50);
+        dragAndDropThree = new Rectangle(50, -200, 50, 50);
     }
 
     private static void initializeShortWide() {
-        shortWideOne = new Rectangle(100, 100, 100, 20);
-        shortWideTwo = new Rectangle(100, 135, 100, 20);
-        shortWideThree = new Rectangle(100, 170, 100, 20);
+        shortWideOne = new Rectangle(-100, 100, 100, 20);
+        shortWideTwo = new Rectangle(-100, 135, 100, 20);
+        shortWideThree = new Rectangle(-100, 170, 100, 20);
     }
 
     private static void initializeBrick() {
@@ -235,7 +247,6 @@ public class MenuRectangles {
         rectangle.setFill(fillColor);
         rectangle.setArcHeight(arcHeight);
         rectangle.setArcWidth(arcWidth);
-        rectangle.setOnMouseClicked(event ->  setGravity(rectangle));
 
     }
 }

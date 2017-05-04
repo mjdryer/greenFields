@@ -21,18 +21,22 @@ public class MenuAnimations {
     public static PathTransition menuTitleBounce, menuTitleLeave, checkboxOneEnter, checkboxOneLeave,
             checkboxTwoEnter, checkboxTwoLeave, checkboxThreeEnter, checkboxThreeLeave, musicOnPath,
             musicOffPath, musicOnUp, musicOffUp, bannerDown, bannerUp, groupInPath, bigBannerPath,
-            squareDownPath, tallThinDownPath, smallWideDownPath, brickDownPath, tallThinGroupPath,
-            shortWideGroupPath, brickGroupPath, squareGroupPath, inGameCanvasDrop,
+            squareDownPath, tallThinDownPath, smallWideDownPath, brickDownPath,
+            inGameCanvasDrop,
+            squareOnePath, squareTwoPath, squareThreePath,
             tallThinOnePath, tallThinTwoPath, tallThinThreePath,
-            brickOnePath, brickTwoPath, brickThreePath;
+            brickOnePath, brickTwoPath, brickThreePath,
+            shortWideOnePath, shortWideTwoPath, shortWideThreePath;
 
     public static Line titleBounceLine, titleLeaveLine, checkboxOneEnterLine, checkboxOneLeaveLine,
             checkboxTwoEnterLine, checkboxTwoLeaveLine, checkboxThreeEnterLine, checkboxThreeLeaveLine,
             musicOnLine, musicOffLine, bannerDownLine, bannerUpLine, musicOnUpLine, musicOffUpLine,
             groupInLine, bigBannerLine, squareDownLine, tallThinDownLine, smallWideDownLine, brickDownLine,
-            tallThinGroupLine, shortWideGroupLine, brickGroupLine, squareGroupLine, inGameCanvasLine,
+            squareGroupLine, inGameCanvasLine,
             tallThinOneLine, tallThinTwoLine, tallThinThreeLine,
-            brickOneLine, brickTwoLine, brickThreeLine;
+            brickOneLine, brickTwoLine, brickThreeLine,
+            shortWideOneLine, shortWideTwoLine, shortWideThreeLine,
+            squareOneLine, squareTwoLine, squareThreeLine;
 
 
     public static void configureMenuAnimations(){
@@ -56,7 +60,6 @@ public class MenuAnimations {
         initializeCheckBoxLines();
         initializeBannerTitleLines();
         initializeMusicLines();
-        initializeGroupLines();
     }
 
     private static void configureMenuPathTransitions() {
@@ -70,26 +73,45 @@ public class MenuAnimations {
         initializeMusicPaths();
         initializeCheckBoxPaths();
         initializeBannerTitlePaths();
-        initializeGroupPaths();
     }
 
-    private static void initializeGroupLines() {
-        shortWideGroupLine = new Line();
-        squareGroupLine = new Line();
-    }
 
-    private static void initializeGroupPaths() {
-        shortWideGroupPath = new PathTransition();
-        squareGroupPath = new PathTransition();
-    }
 
     private static void configureGroupPaths() {
         intializeBrickGroupPaths();
         initializeTallGroupPaths();
+        initializeWideGroupPaths();
+        initializeSquareGroupPaths();
+
         configureBrickGroupPaths();
         configureTallGroupPaths();
-        configureSinglePathTransition(shortWideGroupPath, 1, 2, shortWideGroup, shortWideGroupLine, false);
-        configureSinglePathTransition(squareGroupPath, 1, 2, squareGroup, squareGroupLine, false);
+        configureWideGroupPaths();
+        configureSquareGroupPaths();
+
+    }
+
+    private static void configureSquareGroupPaths() {
+        configureSinglePathTransition(squareOnePath, 1, 2, dragAndDrop, squareOneLine, false);
+        configureSinglePathTransition(squareTwoPath, 1, 2, dragAndDropTwo, squareTwoLine, false);
+        configureSinglePathTransition(squareThreePath, 1, 2, dragAndDropThree, squareThreeLine, false);
+    }
+
+    private static void initializeSquareGroupPaths() {
+        squareOnePath = new PathTransition();
+        squareTwoPath = new PathTransition();
+        squareThreePath = new PathTransition();
+    }
+
+    private static void initializeWideGroupPaths() {
+        shortWideOnePath = new PathTransition();
+        shortWideTwoPath = new PathTransition();
+        shortWideThreePath = new PathTransition();
+    }
+
+    private static void configureWideGroupPaths() {
+        configureSinglePathTransition(shortWideOnePath, 1, 2, shortWideOne, shortWideOneLine, false);
+        configureSinglePathTransition(shortWideTwoPath, 1, 2, shortWideTwo, shortWideTwoLine, false);
+        configureSinglePathTransition(shortWideThreePath, 1, 2, shortWideThree, shortWideThreeLine, false);
     }
 
     private static void configureTallGroupPaths() {
@@ -155,12 +177,39 @@ public class MenuAnimations {
     }
 
     private static void configureGroupLines() {
-        configureSingleLine(shortWideGroupLine, 200, 400, 200, 200);
-        configureSingleLine(squareGroupLine, 200, 400, 200, 200);
+        initializeSquareLines();
+        initializeWideLines();
         initializeTallLines();
-        configureTallLines();
         initializeBrickLines();
+
+        configureSquareLines();
+        configureWideLiens();
         configureBrickLines();
+        configureTallLines();
+    }
+
+    private static void configureSquareLines() {
+        configureSingleLine(squareOneLine, 0, 300, 500, 500);
+        configureSingleLine(squareTwoLine, 0, 300, 500, 500);
+        configureSingleLine(squareThreeLine, 0, 300, 500, 500);
+    }
+
+    private static void initializeSquareLines() {
+        squareOneLine = new Line();
+        squareTwoLine = new Line();
+        squareThreeLine = new Line();
+    }
+
+    private static void initializeWideLines() {
+        shortWideOneLine = new Line();
+        shortWideTwoLine = new Line();
+        shortWideThreeLine = new Line();
+    }
+
+    private static void configureWideLiens() {
+        configureSingleLine(shortWideOneLine, 0, 300, 500, 500);
+        configureSingleLine(shortWideTwoLine, 0, 300, 500, 500);
+        configureSingleLine(shortWideThreeLine, 0, 300, 500, 500);
     }
 
     private static void configureTallLines() {

@@ -40,8 +40,9 @@ public class PanesScenes {
                 tallThinOneButton, smallWideOneButton, squareOneButton, brickOneButton,
                 menuCanvasMain, menuCanvasSide, bannerPattern,
                 beginGame, instructions, rollingHills, oceanSide, microsoftHills,
-                musicOffCheck, musicOnCheck, tallThinGroup, shortWideGroup,
-                squareGroup, brickOne, brickTwo, brickThree, tallThinOne, tallThinTwo, tallThinThree);
+                musicOffCheck, musicOnCheck, tallThinGroup, shortWideOne, shortWideTwo, shortWideThree
+                , brickOne, brickTwo, brickThree, tallThinOne, tallThinTwo, tallThinThree, dragAndDrop, dragAndDropTwo,
+                dragAndDropThree);
 
 
     }
